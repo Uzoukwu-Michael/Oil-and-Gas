@@ -1,0 +1,671 @@
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LLC Big Steps - Energy Generation and Supply</title>
+
+xml
+
+Copy
+<!-- External Libraries -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+
+<style>
+    /* Root Variables */
+    :root {
+        --primary-color: #003366;
+        --secondary-color: #DAA520;
+        --background-light: #f0f2f5;
+        --text-light: #2c3e50;
+        --accent-light: #17a2b8;
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] {
+        --primary-color: #001a33;
+        --secondary-color: #ffd700;
+        --background-light: #1a1a1a;
+        --text-light: #e0e0e0;
+        --accent-light: #00c3ff;
+        --glass-bg: rgba(0, 0, 0, 0.2);
+        --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Global Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: var(--background-light);
+        color: var(--text-light);
+        overflow-x: hidden;
+    }
+
+    /* Header Styles */
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .top-bar {
+        background: var(--primary-color);
+        color: white;
+        padding: 8px 0;
+    }
+
+    .top-bar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .contact-info {
+        display: flex;
+        gap: 20px;
+    }
+
+    .contact-info a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .social-links a {
+        color: white;
+        margin-left: 15px;
+        text-decoration: none;
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--secondary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url('https://picsum.photos/2200/1000?random=1');
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        animation: fadeInUp 1s ease;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        animation: fadeInUp 1s ease 0.3s;
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        animation: fadeInUp 1s ease 0.6s;
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+
+    .cta-btn {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .primary-btn {
+        background: var(--secondary-color);
+        color: var(--primary-color);
+    }
+
+    .secondary-btn {
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+    }
+
+    /* Welcome Section */
+    .welcome {
+        padding: 100px 0;
+        background: var(--background-light);
+    }
+
+    .welcome-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .welcome-text {
+        animation: fadeInLeft 1s ease;
+    }
+
+    .welcome-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+    }
+
+    .welcome-text p {
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .welcome-image {
+        position: relative;
+        animation: fadeInRight 1s ease;
+    }
+
+    .welcome-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    /* Services Section */
+    .services {
+        padding: 100px 0;
+        background: linear-gradient(135deg, var(--primary-color), #004080);
+        color: white;
+    }
+
+    .services-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .service-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--glass-border);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .service-card i {
+        font-size: 3rem;
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+    }
+
+    /* Products Section */
+    .products {
+        padding: 100px 0;
+        background: var(--background-light);
+    }
+
+    .products-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .product-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px var(--shadow);
+        transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .product-image {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .product-info {
+        padding: 20px;
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 100px 0;
+        background: linear-gradient(45deg, var(--primary-color), #002147);
+        color: white;
+    }
+
+    .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .contact-form {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--glass-border);
+        border-radius: 15px;
+        padding: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--glass-border);
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    /* Footer */
+    .footer {
+        background: var(--primary-color);
+        color: white;
+        padding: 50px 0 20px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+    }
+
+    .footer-links a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 10px;
+        transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+        color: var(--secondary-color);
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid var(--glass-border);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .welcome-container,
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+
+        .top-bar-content {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header class="header">
+
+<div class="top-bar">
+
+<div class="top-bar-content">
+
+<div class="contact-info">
+
+<a href="mailto:info@bigsteps.com"><i class="fas fa-envelope"></i> info@bigsteps.com</a>
+
+<a href="tel:+77751163459"><i class="fas fa-phone"></i> +77751163459</a>
+
+</div>
+
+      </div>
+    </div>
+    <nav class="nav-container">
+        <div class="logo">LLC Big Steps</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="products.html">Products</a>
+            <a href="career.html">Career</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Energy Generation and Supply</h1>
+        <p>Leading the way in sustainable energy solutions for a brighter future</p>
+        <div class="cta-buttons">
+            <button class="cta-btn primary-btn">Learn More</button>
+            <button class="cta-btn secondary-btn">Our Services</button>
+        </div>
+    </div>
+</section>
+
+<!-- Welcome Section -->
+<section class="welcome" id="about">
+    <div class="welcome-container">
+        <div class="welcome-text">
+            <h2>Welcome to LLC Big Steps</h2>
+            <p>We are a dynamic and innovative leader in the crude oil sector, recognized for our exceptional management and industry expertise. Our company is actively engaged in the exploration of oil and gas fields, ensuring a stable and reliable supply of these essential resources.</p>
+            <p>In addition to exploration, we excel in the marketing of a diverse range of crude oil, petroleum, and petrochemical products, serving both domestic and international markets.</p>
+            <button class="cta-btn primary-btn">Learn More</button>
+        </div>
+        <div class="welcome-image">
+            <img src="https://picsum.photos/800/600?random=2" alt="Oil and Gas Operations">
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="services-container">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-industry"></i>
+                <h3>Agency</h3>
+                <p>Professional representation and management of oil and gas assets</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Consultant</h3>
+                <p>Expert guidance and strategic consulting services</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>Seller & Buyer Mandate</h3>
+                <p>Facilitating successful transactions in the energy sector</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-warehouse"></i>
+                <h3>Tankfarm Referral</h3>
+                <p>Storage solutions and logistics management</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="products" id="products">
+    <div class="products-container">
+        <h2>Our Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://picsum.photos/800/600?random=3" alt="Crude Oil">
+                </div>
+                <div class="product-info">
+                    <h3>Crude Oil</h3>
+                    <p>High-quality crude oil meeting international standards</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://picsum.photos/800/600?random=4" alt="Natural Gas">
+                </div>
+                <div class="product-info">
+                    <h3>Natural Gas</h3>
+                    <p>Clean and efficient natural gas solutions</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://picsum.photos/800/600?random=5" alt="Petrochemicals">
+                </div>
+                <div class="product-info">
+                    <h3>Petrochemicals</h3>
+                    <p>Advanced petrochemical products for various industries</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for any inquiries</p>
+            <div class="contact-details">
+                <p><i class="fas fa-map-marker-alt"></i> Almaty City, Almalinsky District</p>
+                <p><i class="fas fa-phone"></i> +77751163459</p>
+                <p><i class="fas fa-envelope"></i> info@bigsteps.com</p>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Your Message"></textarea>
+                </div>
+                <button class="cta-btn primary-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>LLC Big Steps is a leading energy company committed to sustainable development and innovative solutions in the oil and gas sector.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <form>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email">
+                </div>
+                <button class="cta-btn primary-btn">Subscribe</button>
+            </form>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2024 LLC Big Steps. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init();
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.1)';
+        }
+    });
+</script>
+</body>
+
+</html>

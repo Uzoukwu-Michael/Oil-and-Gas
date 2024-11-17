@@ -1,0 +1,42 @@
+  /* Custom Styles for Product Page */
+  .hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Images/BULK-LIQUID-PRODUCT-TERMINALSINGAPORE.jpg') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.product-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card h5 {
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.product-card p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.product-card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.container h2 {
+    margin-bottom: 30px;
+}

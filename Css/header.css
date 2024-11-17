@@ -1,0 +1,256 @@
+/* Header Styles */
+/* .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.top-bar {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 0;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.social-links a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+} */
+
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.top-bar {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 0;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.social-links a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;  /* Adjust the logo size */
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+/* Navbar Links Styling */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* Footer */
+.footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--glass-border);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .welcome-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .top-bar-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
