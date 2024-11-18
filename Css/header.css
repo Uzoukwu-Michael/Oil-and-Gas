@@ -73,6 +73,7 @@
 } */
 
 
+/* Header Styles */
 .header {
     position: fixed;
     top: 0;
@@ -89,15 +90,6 @@
     padding: 8px 0;
 }
 
-.top-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .contact-info {
     display: flex;
     gap: 20px;
@@ -109,45 +101,18 @@
     font-size: 0.9rem;
 }
 
-.social-links a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 /* Logo Styling */
 .navbar-brand {
-    display: flex;
-    align-items: center;
+    display: inline-block;
 }
 
 .logo-img {
-    width: 50px;  /* Adjust the logo size */
-    height: auto;
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-left: 10px;
+    width: 100px; /* Adjust logo width to suit your design */
+    height: auto; /* Preserve aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container */
 }
 
 /* Navbar Links Styling */
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
 .nav-links a {
     color: var(--text-light);
     text-decoration: none;
